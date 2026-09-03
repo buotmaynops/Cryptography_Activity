@@ -33,25 +33,6 @@
             padding-bottom: 8px;
         }
 
-        .student-info {
-            display: flex;
-            justify-content: space-between;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .student-info div {
-            width: 50%;
-        }
-
-        input {
-            padding: 10px;
-            width: 90%;
-            border: 1px solid #aaa;
-            border-radius: 5px;
-            margin-top: 8px;
-        }
-
         textarea {
             padding: 10px;
             width: 90%;
@@ -60,6 +41,14 @@
             border-radius: 5px;
             margin-top: 8px;
             resize: vertical;
+        }
+
+        input {
+            padding: 10px;
+            width: 90%;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            margin-top: 8px;
         }
 
         button {
@@ -107,44 +96,7 @@
 <div class="container">
 
 
-    <!-- TITLE -->
-
     <h1>Cryptography Techniques</h1>
-
-
-    <!-- NAME AND SECTION -->
-
-    <div class="student-info">
-
-        <div>
-
-            <b>Name:</b>
-
-            <input
-                type="text"
-                id="name"
-                placeholder="Enter your name">
-
-        </div>
-
-
-        <div>
-
-            <b>Section:</b>
-
-            <input
-                type="text"
-                id="section"
-                placeholder="Enter your section">
-
-        </div>
-
-    </div>
-
-
-    <!-- APPLICATION -->
-
-    <h2>Cryptography Application</h2>
 
 
     <!-- ============================= -->
@@ -184,8 +136,7 @@
 
         <textarea
             id="caesarMessage"
-            placeholder="Enter your message">
-        </textarea>
+            placeholder="Enter your message"></textarea>
 
 
         <br><br>
@@ -248,8 +199,7 @@
 
         <textarea
             id="vigenereMessage"
-            placeholder="Enter your message">
-        </textarea>
+            placeholder="Enter your message"></textarea>
 
 
         <p><b>Keyword</b></p>
@@ -310,8 +260,6 @@ function caesarCipher(text, shift) {
         let code = letter.charCodeAt(0);
 
 
-        // Uppercase letters
-
         if (code >= 65 && code <= 90) {
 
             code =
@@ -323,8 +271,6 @@ function caesarCipher(text, shift) {
         }
 
 
-        // Lowercase letters
-
         else if (code >= 97 && code <= 122) {
 
             code =
@@ -335,8 +281,6 @@ function caesarCipher(text, shift) {
 
         }
 
-
-        // Spaces and other characters
 
         else {
 
@@ -410,8 +354,6 @@ function vigenereCipher(text, key, decrypt) {
         let code = letter.charCodeAt(0);
 
 
-        // Check if the character is a letter
-
         if (
             (code >= 65 && code <= 90) ||
             (code >= 97 && code <= 122)
@@ -426,8 +368,6 @@ function vigenereCipher(text, key, decrypt) {
                 keyLetter.charCodeAt(0) - 65;
 
 
-            // Reverse the shift when decoding
-
             if (decrypt) {
 
                 keyCode =
@@ -436,8 +376,6 @@ function vigenereCipher(text, key, decrypt) {
             }
 
 
-            // Uppercase letters
-
             if (code >= 65 && code <= 90) {
 
                 code =
@@ -445,8 +383,6 @@ function vigenereCipher(text, key, decrypt) {
 
             }
 
-
-            // Lowercase letters
 
             else {
 
@@ -465,8 +401,6 @@ function vigenereCipher(text, key, decrypt) {
         }
 
         else {
-
-            // Keep spaces and symbols
 
             result =
                 result + letter;
@@ -551,10 +485,6 @@ function decodeVigenere() {
 }
 
 
-
-// =====================================
-// RUN VIGENERE CIPHER
-// =====================================
 
 function runVigenere() {
 
